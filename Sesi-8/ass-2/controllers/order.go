@@ -22,7 +22,7 @@ import (
 func CreateOrder(c *gin.Context) {
 	// Initiate Variable
 	var (
-		order  models.Orders
+		order  models.Order
 		result gin.H
 	)
 
@@ -60,7 +60,7 @@ func CreateOrder(c *gin.Context) {
 // @Router /orders [get]
 func GetOrders(c *gin.Context) {
 	var (
-		order  []models.Orders
+		order  []models.Order
 		result gin.H
 	)
 
@@ -93,7 +93,7 @@ func GetOrders(c *gin.Context) {
 // @Router /orders/{orderId} [get]
 func GetOrder(c *gin.Context) {
 	var (
-		order  []models.Orders
+		order  []models.Order
 		result gin.H
 	)
 
@@ -129,8 +129,8 @@ func GetOrder(c *gin.Context) {
 func UpdateOrder(c *gin.Context) {
 
 	var (
-		order    models.Orders
-		newOrder models.Orders
+		order    models.Order
+		newOrder models.Order
 		result   gin.H
 	)
 
@@ -149,7 +149,7 @@ func UpdateOrder(c *gin.Context) {
 		return
 	}
 
-	newOrder.Item = order.Item
+	newOrder.Items = order.Items
 	newOrder.CustomerName = order.CustomerName
 	newOrder.OrderedAt = order.OrderedAt
 	err = db.Session(&gorm.Session{FullSaveAssociations: true}).Save(&newOrder).Error
@@ -180,7 +180,7 @@ func UpdateOrder(c *gin.Context) {
 func DeleteOrder(c *gin.Context) {
 	id := c.Param("id")
 	var (
-		order  models.Orders
+		order  models.Order
 		result gin.H
 	)
 

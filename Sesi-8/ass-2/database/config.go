@@ -16,7 +16,7 @@ func DBInit() *gorm.DB {
 		panic("failed connect to database")
 	}
 
-	err = db.AutoMigrate(&models.Orders{}, &models.Items{})
+	err = db.AutoMigrate(&models.Order{}, &models.Item{})
 
 	if err != nil {
 		errMsg := fmt.Sprintf("Failed to migrate models: %s", err.Error())

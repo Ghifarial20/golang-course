@@ -1,10 +1,15 @@
 package models
 
-import "time"
+import (
+	"time"
 
-type Orders struct {
-	OrderID      uint      `gorm:"primary_key;auto_increment" json:"-"`
-	CustomerName string    `gorm:"size:255;not null;" json:"customerName"`
-	OrderedAt    time.Time `gorm:"autoCreateTime" json:"orderedAt"`
-	Item         []Items   `gorm:"foreignKey:ItemID"`
+	"gorm.io/gorm"
+)
+
+type Order struct {
+	gorm.Model
+	ID           uint      `json:"-" gorm:"primary_key;autoIncrement"`
+	CustomerName string    `json:"customerName" gorm:"not null;"`
+	OrderedAt    time.Time `json:"orderedAt" gorm:"autoCreateTime" `
+	Items        []Item    `json:"items" gorm:"foreignKey:OrderID;references:ID"`
 }

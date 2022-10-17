@@ -1,0 +1,2 @@
+link github assignment 2:
+https://github.com/Ghifarial20/golang-course/tree/main/Sesi-8/ass-2
