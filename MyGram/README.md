@@ -7,7 +7,7 @@ Program ini merupakan final project untuk Kelas Scalable Web Service with Golang
 ## Cara Menjalankan
 
 - clone github MyGram
-- create database postgre dengan nama "myGram"
+- create database postgre dengan nama "mygram"
 - buka terminal
 - pindah direktori ke folder be
 - ketikkan "go run main.go"
