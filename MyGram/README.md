@@ -25,7 +25,7 @@ Program ini merupakan final project untuk Kelas Scalable Web Service with Golang
 
 ### Via Postman
 
-- Buka [link ini](./MyGram%20API.postman_collection.json) dan simpan sebagai json
+- Buka [link ini](./Mygram.postman_collection.json) dan simpan sebagai json
 - Import file json pada Postman
 - Lakukan tes pada setiap Endpoint
 
